@@ -112,7 +112,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+                  git push https://heroku:$74f3b023-b704-4010-8ba7-43b1a2ea1a89@git.heroku.com/sachins-ml-demo.git demo_container
   
   section_11_build_and_push_to_heroku_docker:
     <<: *defaults
@@ -120,7 +120,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
-      - run: docker login --username=$HEROKU_EMAIL --password=$HEROKU_API_KEY registry.heroku.com
+      - run: docker login --username=sachin.umrao.1512@gmail.com --password=74f3b023-b704-4010-8ba7-43b1a2ea1a89 registry.heroku.com
       - run:
           name: Setup Heroku CLI
           command: |
@@ -132,7 +132,7 @@ jobs:
       - run: 
           name: Release to Heroku
           command: |
-            heroku container:release web --app $HEROKU_APP_NAME
+            heroku container:release web --app sachins-ml-demo
 
 workflows:
   version: 2
